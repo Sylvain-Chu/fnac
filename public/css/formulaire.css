@@ -2,3 +2,168 @@
     color: red;
     size: 11pxs;
 }
+
+
+/*---------- inscription ----------*/
+body {
+    background-color:rgba(242,242,242,255);
+    text-align:center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1{
+    padding-top:3vh;
+}
+
+.soustitre{
+    font-size: large;
+}
+
+.formpres{
+    background-color:rgba(255,255,255,255);
+    width:50vw;
+    margin:auto;
+    border-radius:30px;
+}
+
+.formulaire{
+    padding-top:3vh;
+    background-color:rgba(255,255,255,255);
+    padding-bottom: 3vh;
+    border-radius:30px;
+}
+
+.genrecocher{
+    display: inline;
+    max-width: 1vw;
+    color:rgb(105,105,105);
+}
+
+.labelform{
+    text-align: left;
+    padding-left: 17.5vw;
+    padding-top: 1.3vh;
+    display:block;
+    font-size:small;
+    color:gray;
+}
+
+
+input{
+    padding-bottom: 1.2vh;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid black;
+    outline: none;
+    width:15vw;
+}
+
+input:hover{
+    border-bottom: 1px solid rgba(244,176,39,255);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.valider{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+    font-size:medium;
+    background-color:rgba(244,176,39,255);
+    border-radius: 30px;
+    padding:0.8vw;
+    margin-top: 3vh;
+}
+
+.valider:hover{
+    cursor: pointer;
+}
+
+/*---------- connexion ----------*/
+.titreh1{
+    margin-top: 150px;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-weight:bold;
+}
+
+.titreh2{
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-weight:lighter;
+}
+
+.bodyConnexion{
+    padding: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #b9b9b9;
+  background-color: #e3e3e3;
+}
+
+.formulaire{
+    text-align:center;
+    
+}
+
+#labelConnexion{
+    color:black;
+    display: block;
+    padding-top: 0vh;
+}
+
+#inputConnexion{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+}
+
+#inputConnexion:hover{
+    border-bottom: 1px solid rgba(244,176,39,255);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+}
+
+.butConnexion{
+    margin-top: auto;
+    width: 20vw;
+    height: 40px;
+    background-color: rgba(244,176,39,255);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor: pointer;
+
+    border-top-style: hidden; /* enlever bordures */
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+}
+
+.carreBlanc{
+    background-color: white;
+    width: 35vw;
+    height: 18vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+
+.lienInscription{
+    text-align:center;
+    color:black;
+}
+

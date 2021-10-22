@@ -20,37 +20,33 @@
                     @csrf
                     
                     
-                    <input id="genrecocher" type="radio" name="gender" value="Mme"> 
+                    <input id="genrecocher" type="radio" name="gender" value="Mme" {{ old('gender')=="Mme" ? 'checked='.'"'.'checked'.'"' : '' }}> 
                     <label id="genrecocher" for="female">Madame</label>
 
-                    <input id="genrecocher" type="radio" name="gender" value="M."> 
+                    <input id="genrecocher" type="radio" name="gender" value="M." {{ old('gender')=="M." ? 'checked='.'"'.'checked'.'"' : '' }}> 
                     <label id="genrecocher" for="male">Monsieur</label>
 
-                    <label id="labelform">Nom :</label> <input type ="text" name="nom" />
+                    <label id="labelform">Nom :</label> <input type ="text" name="nom" value="{{ old('nom')}}"/>
 
                     @if($errors->has('nom'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Prenom :</label> <input type="text" name="prenom" />
+                    <label id="labelform">Prenom :</label> <input type="text" name="prenom" value="{{ old('prenom')}}"/>
                     @if($errors->has('prenom'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Mail :</label> <input type ="text" name="mail"/>
+                    <label id="labelform">Mail :</label> <input type ="text" name="mail" value="{{ old('mail')}}"/>
                     @if($errors->has('mail'))
                         <p class="error">Veuillez vérifiez le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Mot de passe (min 3 charactères):</label> <input type ="password" name="password"/>
+                    <label id="labelform">Mot de passe:</label> <input type ="password" name="password" />
                     @if($errors->has('password'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Confirmation mot de passe :</label> <input type ="password" name="password_confirmation"/>
-                    @if($errors->has('password_confirmation'))
-                        <p class="error">Veuillez vérifier le champ ci dessus</p>
-                    @endif
                     <br>
 
                     <button class="valider" type="submit">Valider </button>
