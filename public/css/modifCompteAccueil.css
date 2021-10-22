@@ -1,0 +1,42 @@
+body{
+    padding: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #b9b9b9;
+  background-color: #e3e3e3;
+}
+
+h1 {
+  text-align: left;
+  margin-top: 5vw;
+  padding-left: 10vw;
+  color: black;
+  font-size: 25px;
+  font-family: Roboto, Arial, Helvetica, Tahoma, sans-serif;
+  font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    padding: 1vw;
+    display: inline;
+    margin: 1vw;
+    cursor: pointer;
+  }
+a{
+    text-decoration: none;
+    color:black;
+}
+
+  #trait_dessus
+  {
+  border-top: 1px solid #000;
+  width : 700px;
+  }
+
+ 

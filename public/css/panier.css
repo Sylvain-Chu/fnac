@@ -1,0 +1,61 @@
+body{
+    background-color: rgba(242,242,241,255);
+}
+
+.blocCentre{
+    background-color: white;
+    width: 70vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.imgPanier{
+    width: 15vw;
+    
+}
+
+.tableProduit{
+    width: 100%;
+}
+
+.typeProduit{
+    color: grey;
+}
+
+.lienPanier > a {
+    text-decoration: none;
+    color: grey;
+}
+
+.lienPanier{
+    color: grey;
+}
+
+.blocRecap{
+    background-color: white;
+    width: 20vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+section{
+    display: flex;
+}
+
+.buttonValidate{
+    color: white;
+    background-color: rgba(244,176,39,255);
+    cursor: pointer;
+    padding: 5%;
+    font-size: 16px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.alignLeft{
+    text-align: right;
+}

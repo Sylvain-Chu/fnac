@@ -1,0 +1,81 @@
+#titreh1{
+    margin-top: 150px;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-weight:bold;
+}
+
+#titreh2{
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-weight:lighter;
+}
+
+#bodyConnexion{
+    padding: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #b9b9b9;
+  background-color: #e3e3e3;
+}
+
+.formulaire{
+    text-align:center;
+    
+}
+
+#labelConnexion{
+    color:black;
+    display: block;
+    padding-top: 0vh;
+}
+
+#inputConnexion{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+}
+
+#inputConnexion:hover{
+    border-bottom: 1px solid rgba(244,176,39,255);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+}
+
+#butConnexion{
+    margin-top: auto;
+    width: 20vw;
+    height: 40px;
+    background-color: rgba(244,176,39,255);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor: pointer;
+
+    border-top-style: hidden; /* enlever bordures */
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+}
+
+.carreBlanc{
+    background-color: white;
+    width: 35vw;
+    height: 18vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+
+#lienInscription{
+    text-align:center;
+    color:black;
+}
+

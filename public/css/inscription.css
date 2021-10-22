@@ -1,0 +1,79 @@
+body {
+    background-color:rgba(242,242,242,255);
+    text-align:center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1{
+    padding-top:3vh;
+}
+
+#soustitre{
+    font-size: large;
+}
+
+.formpres{
+    background-color:rgba(255,255,255,255);
+    width:50vw;
+    margin:auto;
+    border-radius:30px;
+}
+
+.formulaire{
+    padding-top:3vh;
+    background-color:rgba(255,255,255,255);
+    padding-bottom: 3vh;
+    border-radius:30px;
+}
+
+#genrecocher{
+    display: inline;
+    max-width: 1vw;
+    color:rgb(105,105,105);
+}
+
+#labelform{
+    text-align: left;
+    padding-left: 17.5vw;
+    padding-top: 1.3vh;
+    display:block;
+    font-size:small;
+    color:gray;
+}
+
+
+input{
+    padding-bottom: 1.2vh;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid black;
+    outline: none;
+    width:15vw;
+}
+
+input:hover{
+    border-bottom: 1px solid rgba(244,176,39,255);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.valider{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+    font-size:medium;
+    background-color:rgba(244,176,39,255);
+    border-radius: 30px;
+    padding:0.8vw;
+    margin-top: 3vh;
+}
+
+.valider:hover{
+    cursor: pointer;
+}

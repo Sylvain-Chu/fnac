@@ -1,0 +1,98 @@
+h1 {
+  margin-top: 5vw;
+  padding-left: 35vw;
+  color: black;
+  font-size: 25px;
+  font-family: Roboto, Arial, Helvetica, Tahoma, sans-serif;
+  font-weight: 300;
+}  
+   
+ body{
+  padding: 1em;
+  font-family: Raleway;
+  font-size: 15px;
+  background-color: #e3e3e3;
+}
+
+.carreBlanc{
+    background-color: white;
+    width: 30vw;
+    height: 70vh;;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.radioButtons{
+margin-left: 5vw;
+
+
+}
+
+#genrecocher{
+  display: inline;
+  max-width: 10vw;
+  color: black;
+}
+
+.formulaireName{
+  margin-left: 5vw;
+}
+
+#inputNom, #inputPrenom, #inputPseudo{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+
+}
+
+#inputNom:hover,#inputPrenom:hover,#inputPseudo:hover{
+  border-bottom: 1px solid rgba(244,176,39,255);
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  outline: none;
+}
+
+#labelNom, #labelPrenom, #labelPseudo{
+    color:black;
+    display: block;
+    padding-top: 0vh;
+    font-size: 0.8em;
+    font-family:Open Sans;
+    margin-top: 2vh;
+
+}
+
+#pDateNaissance{
+  margin-top: 5vh;
+  margin-left: 5vw;
+  font-family:Open Sans;
+  font-size: 0.8em;
+}
+
+#anniv{
+  margin-left: 5vw;
+}
+
+#divButtonEnvoyer{
+  margin-top: 10vh;
+  margin-left: 7vw;
+}
+
+#butEnvoyer{
+  color: black;
+  background-color:#f5b027;
+  height: 5vh;
+  width: 12vw;
+  transition: all 0.8s ease;
+  overflow: hidden;
+  font-size: 10px;
+  cursor: pointer;
+  
+  border-top-style: hidden; /* enlever bordures */
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+}
+
