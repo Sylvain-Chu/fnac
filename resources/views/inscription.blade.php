@@ -12,7 +12,7 @@
     
 
         <div class="formpres">
-            <h1>Création du compte</h1>
+            <h1>Création du compteeee</h1>
             <p id="soustitre">Il ne vous reste plus qu'à renseigner vos informations</p>
 
             <div class="formulaire">
