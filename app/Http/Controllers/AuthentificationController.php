@@ -65,7 +65,7 @@ class AuthentificationController extends Controller
             'nom' => ['required'],
             'prenom' => ['required'],
             'mail' => ['required', 'email'],
-            'password' => [ 'required', 'confirmed', 'min:3'],
+            'password' => [ 'required', 'confirmed'],
             'password_confirmation' => ['required'],
         ]);
 

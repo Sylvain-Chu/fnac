@@ -39,10 +39,10 @@
 
                     <label id="labelform">Mail :</label> <input type ="text" name="mail"/>
                     @if($errors->has('mail'))
-                        <p class="error">Veuillez remplir le champ ci dessus</p>
+                        <p class="error">Veuillez vérifiez la syntaxe de votre adresse email</p>
                     @endif
 
-                    <label id="labelform">Mot de passe :</label> <input type ="password" name="password"/>
+                    <label id="labelform">Mot de passe (min 3 charactères):</label> <input type ="password" name="password"/>
                     @if($errors->has('password'))
                         <p class="error">Veuillez remplir le champ ci dessus</p>
                     @endif
