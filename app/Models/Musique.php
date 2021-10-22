@@ -45,6 +45,15 @@ class Musique extends Model
         );
     }
 
+    public function favoris(){
+        return $this->belongsToMany(
+            Acheteur::class,
+            "t_j_favori_fav",
+            "ach_id",
+            "mus_id"
+        );
+    }
+
 
     /*
     public function cherche(Request $request){

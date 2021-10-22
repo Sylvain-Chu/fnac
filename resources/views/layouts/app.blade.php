@@ -59,6 +59,7 @@
                 @else
 
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    <li class="login menuli"><a id="jaunelink" href="{{ url('/favoris') }}">Favoris</a>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/formDeconnexion') }}">Se déconnecter</a>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/mesCommandes') }}">Mes commandes</a></li>
                     </li>

@@ -23,12 +23,3 @@
 @endforeach
 
 @endsection
-
-
-
-
-
-
-
-
-

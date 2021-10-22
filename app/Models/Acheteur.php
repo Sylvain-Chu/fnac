@@ -21,4 +21,23 @@ class Acheteur extends Model
             "ach_id"
         );
     }
+
+    public function genres(){
+        return $this->belongsToMany(
+            Genre::class,
+            "t_j_genremusique_gem",
+            "mus_id",
+            "gen_id"
+        );
+    }
+
+
+    public function favoris(){
+        return $this->belongsToMany(
+            Musique::class,
+            "t_j_favori_fav",
+            "ach_id",
+            "mus_id"
+        );
+    }
 }

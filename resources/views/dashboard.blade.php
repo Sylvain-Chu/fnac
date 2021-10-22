@@ -19,7 +19,7 @@
     @endsection--}}
 
 
-        You're logged in, 
+        Vous êtes connecté, 
 
         {{ Auth::user()->ach_nom }} 
         {{ Auth::user()->ach_prenom }} 

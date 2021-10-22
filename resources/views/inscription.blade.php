@@ -29,27 +29,27 @@
                     <label id="labelform">Nom :</label> <input type ="text" name="nom" />
 
                     @if($errors->has('nom'))
-                        <p class="error">Veuillez remplir le champ ci dessus</p>
+                        <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
                     <label id="labelform">Prenom :</label> <input type="text" name="prenom" />
                     @if($errors->has('prenom'))
-                        <p class="error">Veuillez remplir le champ ci dessus</p>
+                        <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
                     <label id="labelform">Mail :</label> <input type ="text" name="mail"/>
                     @if($errors->has('mail'))
-                        <p class="error">Veuillez vérifiez la syntaxe de votre adresse email</p>
+                        <p class="error">Veuillez vérifiez le champ ci dessus</p>
                     @endif
 
                     <label id="labelform">Mot de passe (min 3 charactères):</label> <input type ="password" name="password"/>
                     @if($errors->has('password'))
-                        <p class="error">Veuillez remplir le champ ci dessus</p>
+                        <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
                     <label id="labelform">Confirmation mot de passe :</label> <input type ="password" name="password_confirmation"/>
                     @if($errors->has('password_confirmation'))
-                        <p class="error">Veuillez remplir le champ ci dessus</p>
+                        <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
                     <br>
 

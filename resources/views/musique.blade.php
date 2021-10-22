@@ -45,6 +45,13 @@
         <form action="">        
             <button>Ajouter au panier</button>
         </form>
+
+        <form action="{{ url('/ajouteFav') }}" method="POST">  
+            @csrf
+            <input type="hidden" name="url" value="{{ substr(url()->current(), 24);}}">            
+            <input type="hidden" name="mus_id" value="{{$musique->mus_id}}">    
+            <button>Ajouter au favoris</button>
+        </form>
         
 </div>
 
@@ -59,7 +66,6 @@
 
 
 @foreach ($avis as $avi)
-
     <h3>{{$avi->acheteur->ach_pseudo}}</h3>
     <h4>{{$avi->avi_titre}}</h4>
     @php

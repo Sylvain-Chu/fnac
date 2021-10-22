@@ -13,6 +13,8 @@ use App\Http\Controllers\AvisAbusifController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CompteController;
 use App\Http\Controllers\EditeurController;
+use App\Http\Controllers\FavoriController;
+use App\Models\Favori;
 use App\Models\Genre;
 use App\Models\Musique;
 use App\Models\Rayon;
@@ -194,4 +196,9 @@ Route::post('/ajoutRayon', [RayonController::class, "ajoutRayon"]);
 Route::get('/commandes', [CommandeController::class, "index"]);
 
 Route::get('/mesCommandes', [CommandeController::class, "mesCommandes"]);
+
+Route::get('/favoris', [FavoriController::class, "index"]);
+
+Route::post('/ajouteFav', [FavoriController::class, "ajouteFav"]);
+Route::post('/supprFav', [FavoriController::class, "suppFav"]);
 
