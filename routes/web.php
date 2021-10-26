@@ -33,9 +33,36 @@ use App\Models\User;
 |
 */
 
+Route::group([
+    'middleware' => 'App\Http\Middleware\Auth',
+], function(){
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+
+    //-----------------------modif compte ----------------------------
+    Route::post('/mesCoordonnees', [CompteController::class, "modifCoordonnees"]);
+    Route::get('/mesCoordonnees', function () {
+        return view('mesCoordonnees');
+    });
+
+    Route::post('/modifMotpasse', [CompteController::class, "modifMotpasse"]);
+    Route::get('/modifMotpasse', function () {
+        return view('modifMotpasse');
+    });
+
+    /*Route::get('/modifCompteAccueil', function () {
+        return view('modifCompteAccueil');
+    });*/
+    //---------------------------------------------------------------------
+
+    
+
+});
+
 
 Route::get('/', [MusiqueController::class, "index"]);
-
 
 Route::get('/header', function () {
     return view('header');
@@ -53,46 +80,11 @@ Route::get('/inscription', function () {
     return view('inscription');
 });
 
-
 Route::get('/connexion', function () {
     return view('connexion');
 });
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 //---------------------------------------------------------------------
-
-
-//-----------------------modif compte ----------------------------
-
-Route::get('/modifCompteAccueil', function () {
-    return view('modifCompteAccueil');
-});
-
-Route::post('/mesCoordonnees', [CompteController::class, "modifCoordonnees"]);
-
-Route::get('/mesCoordonnees', function () {
-    return view('mesCoordonnees');
-});
-
-Route::get('/mesAdresses', function () {
-    return view('mesAdresses');
-});
-
-Route::get('/mesPaiements', function () {
-    return view('mesPaiements');
-});
-
-
-Route::post('/modifMotpasse', [CompteController::class, "modifMotpasse"]);
-
-Route::get('/modifMotpasse', function () {
-    return view('modifMotpasse');
-});
-//---------------------------------------------------------------------
-
 
 
 //--------------TRI PAR RAYON-----------------------------------------
@@ -106,7 +98,7 @@ Route::get('/rayon/{rayon}', function ($nomRayon) {
 
 Route::get('/rayon/{rayon}/{musiqueid}', function ($rayon, $musiqueid) {
     return view('musique', [
-        'musique'       => MusiqueController::affichageMusique($musiqueid),
+        'laMusique'       => MusiqueController::affichageMusique($musiqueid),
         'avis'          => AvisController::trouverAvis($musiqueid),
         'moyenneAvis'   => AvisController::calculMoyenneAvis($musiqueid)
     ]);
@@ -127,7 +119,7 @@ Route::get('/genre/{genre}', function ($nomGenre) {
 
 Route::get('/genre/{genre}/{musiqueid}', function ($genre, $musiqueid) {
     return view('musique', [
-        'musique'       => MusiqueController::affichageMusique($musiqueid),
+        'laMusique'       => MusiqueController::affichageMusique($musiqueid),
         'avis'          => AvisController::trouverAvis($musiqueid),
         'moyenneAvis'   => AvisController::calculMoyenneAvis($musiqueid),
         //'verif'       =>AvisController::verificationInterpreteMusique($musiqueid)
@@ -148,7 +140,7 @@ Route::get('/recherche', function () {
 //-------------MUSIQUE-------------------------------------
 Route::get('/musique/{idMusique}', function ($musiqueid) {
     return view('musique', [
-        'musique'       => MusiqueController::affichageMusique($musiqueid),
+        'laMusique'       => MusiqueController::affichageMusique($musiqueid),
         'avis'          => AvisController::trouverAvis($musiqueid),
         'moyenneAvis'   => AvisController::calculMoyenneAvis($musiqueid),
         'url'           => '/musique/{idMusique}'
@@ -177,15 +169,24 @@ Route::post('/signalement', [AvisController::class, "signalerAvis"]);
 
 Route::post('/suppresionAvisAbusif', [AvisAbusifController::class, "supprimerAvis"]);
 
-//----------------------------
+//-----------------------COMMANDES/PANIER---------------------
+
+Route::post('/commander', [PanierController::class, "commander"]);
+
+Route::get('/panier', function () {
+    return view('panier');
+});
+
+
+Route::get('/monPanier', [MusiqueController::class, "panier"]);
 
 
 //--------------MEMBRE COMMUNICATION--------
 
-Route::get('/avisAbusifs', [AvisAbusifController::class, "index"]);
-Route::get('/enregistrerPhoto', [MusiqueController::class, "musiquePhoto"]);
-Route::get('/consulterCommande', [AvisAbusifController::class, "index"]);
-Route::get('/ajoutRayon', [RayonController::class, "editRayon"]);
+Route::get('/avisAbusifs', [AvisAbusifController::class, "index"])->middleware('App\Http\Middleware\Auth');
+Route::get('/enregistrerPhoto', [MusiqueController::class, "musiquePhoto"])->middleware('App\Http\Middleware\Auth');
+Route::get('/consulterCommande', [AvisAbusifController::class, "index"])->middleware('App\Http\Middleware\Auth');
+Route::get('/ajoutRayon', [RayonController::class, "editRayon"])->middleware('App\Http\Middleware\Auth');
 
 
 Route::post('/photoMusique', [MusiqueController::class, "formAjoutPhoto"]);
@@ -202,3 +203,6 @@ Route::get('/favoris', [FavoriController::class, "index"]);
 Route::post('/ajouteFav', [FavoriController::class, "ajouteFav"]);
 Route::post('/supprFav', [FavoriController::class, "suppFav"]);
 
+Route::get('/topbar', function () {
+    return view('topbar');
+});

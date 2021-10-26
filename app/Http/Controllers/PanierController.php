@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 class PanierController extends Controller
 {
     public function affichePanier(){
-    	return view ("panier");
+        session([ "panier" => [ ]]);
+    	return view("panier");
+    }
+
+    public function commander(Request $request)
+    {
+        session()->push("panier", $request->get("mus_id"));
+
+        return redirect("/");
     }
 }

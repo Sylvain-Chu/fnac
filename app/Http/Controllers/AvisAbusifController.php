@@ -23,6 +23,6 @@ class AvisAbusifController extends Controller
         ->where('avi_id', $avi_id)
         ->delete();
         
-        return redirect($request->input('url'));
+        return back();
     }
 }

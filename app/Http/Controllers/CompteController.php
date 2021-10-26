@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class CompteController extends Controller
 {
+    
     public function modifMotpasse(Request $request)
     {
         //vérifier ici si l'utilisateur est connecté

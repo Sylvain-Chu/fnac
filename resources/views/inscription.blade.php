@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('/css/inscription.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/formulaire.css')}}">
     <title>Inscription</title>
 </head>
 <body>
-    
-    
 
         <div class="formpres">
             <h1>Création du compte</h1>
@@ -19,13 +18,14 @@
                 <form action="{{ url("/inscription") }}" method="post">
                     @csrf
                     
-                    
                     <input id="genrecocher" type="radio" name="gender" value="Mme" {{ old('gender')=="Mme" ? 'checked='.'"'.'checked'.'"' : '' }}> 
                     <label id="genrecocher" for="female">Madame</label>
 
                     <input id="genrecocher" type="radio" name="gender" value="M." {{ old('gender')=="M." ? 'checked='.'"'.'checked'.'"' : '' }}> 
                     <label id="genrecocher" for="male">Monsieur</label>
-
+                    @if($errors->has('gender'))
+                        <p class="error">Veuillez vérifier le champ ci dessus</p>
+                    @endif
                     <label id="labelform">Nom :</label> <input type ="text" name="nom" value="{{ old('nom')}}"/>
 
                     @if($errors->has('nom'))

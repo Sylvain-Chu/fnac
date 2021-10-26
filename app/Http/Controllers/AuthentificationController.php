@@ -31,7 +31,7 @@ class AuthentificationController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
@@ -55,6 +55,9 @@ class AuthentificationController extends Controller
 
         $request->session()->regenerateToken();
 
+        
+        $request->session()->forget('panier');
+        
         return redirect('/');
     }
 
@@ -77,6 +80,8 @@ class AuthentificationController extends Controller
         $acheteur->ach_civilite = request('gender');
         
         $acheteur->save();
+        
+        Auth::login($acheteur);
 
 
         return redirect('/dashboard');

@@ -28,8 +28,7 @@ class FavoriController extends Controller
         if (empty($result)) {
             DB::insert('insert into t_j_favori_fav(ach_id, mus_id) values (?, ?)', [$ach_id, $mus_id]);
         }
-
-        return redirect($request->input('url'));
+        return back();
     }
 
     public static function suppFav(Request $request)
@@ -39,6 +38,6 @@ class FavoriController extends Controller
 
         DB::delete('delete from t_j_favori_fav where ach_id = :ach_id AND mus_id = :mus_id', [$ach_id, $mus_id]);
 
-        return redirect($request->input('url'));
+        return back();
     }
 }

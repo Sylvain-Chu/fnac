@@ -50,7 +50,7 @@ class AvisController extends Controller
         $b->avi_nbutilenon = 0;
         $b->save();
 
-        return redirect($request->input('url'));
+        return back();
     }
 
 
@@ -62,7 +62,7 @@ class AvisController extends Controller
             ->where('avi_id', $request->input("id"))
             ->increment('avi_nbutileoui');
         //}
-        return redirect($request->input('url'));
+        return back();
     }
     public function updateUtileNon(Request $request)
     {
@@ -73,7 +73,7 @@ class AvisController extends Controller
             ->increment('avi_nbutilenon');
         //}
 
-        return redirect($request->input('url'));
+        return back();
     }
 
     public function signalerAvis(Request $request){
@@ -85,8 +85,7 @@ class AvisController extends Controller
             ['ach_id' => $id_ach,
              'avi_id' => $avi_id]
         );
-        return redirect($request->input('url'));
-
+        return back();
     }
 
     public static function avisSignaler(){

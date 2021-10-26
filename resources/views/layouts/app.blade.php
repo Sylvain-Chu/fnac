@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}" type="image/x-icon">
     <title>@yield('title')</title>
 
+    <link rel="stylesheet" href="{{ asset('/css/topbar.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/styleRayons.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/formulaire.css') }}">
 
@@ -18,11 +19,18 @@
 <body>
 
     <header>
+        <div>
+            <h2>Panier</h2>
+            <?php
+                var_dump(session("panier"));
+            ?>
+        </div>
 
     </header>
 
     @section('nav')
         <div id="menu">
+            <script src="{{asset('/js/tab.js')}}"></script>
             <ul id="menuoptions">
                 <li class="menuli"><a id="jaunelink" href="{{ url('/') }}">Accueil</a></li>
                 <li class="menuli"><a id="jaunelink" href="{{ url('/rayon') }}">Rayons</a></li>
@@ -57,8 +65,8 @@
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/inscription') }}">S'inscrire</a></li>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/connexion') }}">Se connecter</a></li>
                 @else
-
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    <li class="login menuli"><a id="jaunelink" href="{{ url('/monPanier') }}">Mon panier</a></li>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/favoris') }}">Favoris</a>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/formDeconnexion') }}">Se déconnecter</a>
                     <li class="login menuli"><a id="jaunelink" href="{{ url('/mesCommandes') }}">Mes commandes</a></li>

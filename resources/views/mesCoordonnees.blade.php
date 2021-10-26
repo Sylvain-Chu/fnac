@@ -71,9 +71,5 @@
 
   </form>
 @endif
-
-  @if(!Auth::user())
-  Vous devez être connecté pour avoir accès à cette page ;)
-  @endif
    
 @endsection

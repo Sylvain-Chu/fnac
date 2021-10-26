@@ -29,10 +29,12 @@
             @endphp
 
             <h3>Commande du {{ $dateCommande }} :</h3>
+            <input type="hidden" name="dateCommande" value="{{ $dateCommande }}">
             <ul>
                 @foreach ($commande->ligneachat as $c)
                     <li>{{ $c->mus_titre }} <br> Nombre d'article : {{ $c->pivot->lea_quantite }}</li><br>
-
+                    <input type="hidden" name="musTitre" value="{{ $c->mus_titre }}">
+                    <input type="hidden" name="musTitre" value="{{ $c->mus_titre }}">
                 @endforeach
             </ul>
 
@@ -40,7 +42,7 @@
             <br>
         @endforeach
     @else
-            <p>Aucune commande n'a encore été effectuer</p>
+        <p>Aucune commande n'a encore été effectuer</p>
     @endif
 
 @endsection

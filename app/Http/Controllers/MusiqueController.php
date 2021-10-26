@@ -17,9 +17,13 @@ class MusiqueController extends Controller
         return view("musiques-list", ["musiques" => Musique::all()->sortby('mus_titre')]);
     }
 
+    public function panier(){
+        return view("panier", ["musiques" => Musique::all()->sortby('mus_titre')]);
+    }
+
     public function musiquePhoto(){
         return view("musiquePhoto", ["musiques" => Musique::all()]);
-    }
+    }    
     
     public function formAjoutPhoto(Request $request)
     {
@@ -40,6 +44,6 @@ class MusiqueController extends Controller
                 ->where('mus_id', 'like', $request->input('musique'))
                 ->update(['mus_urlphoto' => 'storage/img/photo/' . $request->file('photo')->getClientOriginalName()]);
         }       
-        return redirect($request->input('url'));
+        return back();
     }
 }

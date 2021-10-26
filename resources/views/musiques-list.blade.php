@@ -36,6 +36,7 @@
                 <li>{{$musique->editeur->edi_nom}}</li>
 
                 <li>{{$musique->mus_prixttc}} €</li> 
+
         @endforeach 
     </ul> 
 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'FNAC - Rayons')
+@section('title', 'FNAC')
 
 @section('sidebar')
     @parent
