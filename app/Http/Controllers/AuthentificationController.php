@@ -35,7 +35,8 @@ class AuthentificationController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Mauvais identifiant ou mot de passe.',
+            'email' => 'Mauvais identifiant.',
+            'password' => 'Mauvais mot de passe.',
         ]);
 
 
@@ -83,8 +84,8 @@ class AuthentificationController extends Controller
         
         Auth::login($acheteur);
 
-
         return redirect('/dashboard');
+
     }
 
 }

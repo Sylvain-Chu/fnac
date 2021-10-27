@@ -19,17 +19,18 @@
     <h1>Mes commandes : </h1>
     <br>
     @php
-    $nbCommandes = count($mesCommandes);
+        $nbCommandes = count($mesCommandes);
     @endphp
     @if ($nbCommandes > 0)
         @foreach ($mesCommandes as $commande)
-            @php
-                $datehier = date('Y-m-d', strtotime('-1 days'));
-                $dateCommande = strftime('%d %b %Y');
+            @php                
+                $datetemp = $commande->aca_date;
+                $timestamp = strtotime($datetemp); 
+                $date = strftime("%d %B %G", $timestamp );
             @endphp
 
-            <h3>Commande du {{ $dateCommande }} :</h3>
-            <input type="hidden" name="dateCommande" value="{{ $dateCommande }}">
+            <h3>Commande du {{ $date }} :</h3>
+            <input type="hidden" name="dateCommande" value="{{ $date }}">
             <ul>
                 @foreach ($commande->ligneachat as $c)
                     <li>{{ $c->mus_titre }} <br> Nombre d'article : {{ $c->pivot->lea_quantite }}</li><br>

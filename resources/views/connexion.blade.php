@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/connexion.css')}}">
+    <link rel="stylesheet"type="text/css"  href="{{asset('/css/formulaire.css')}}">
     <title>Connexion</title>
 </head>
 <body id ="bodyConnexion">
@@ -17,11 +18,17 @@
         <form method="post" action="{{ url("/formConnexion") }}">
             @csrf
             <label id="labelConnexion">Votre email :</label> 
-            <input id="inputConnexion" type ="text" name="ach_mel" />
+            <input id="inputConnexion" type ="text" name="ach_mel" required/>
             <br>
+            @error('email')
+                <div class="error">{{ $message }}</div>
+            @enderror
             <label id="labelConnexion">Votre mot de passe :</label>
-            <input id="inputConnexion" type="password" name="ach_motpasse" />
+            <input id="inputConnexion" type="password" name="ach_motpasse" required/>
             <br>
+            @error('password')
+                <div class="error">{{ $message }}</div>
+            @enderror
             <p><input type="submit" value="Connexion" id="butConnexion"></p>
         </form>
     </div>

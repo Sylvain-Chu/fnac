@@ -19,12 +19,6 @@
 <body>
 
     <header>
-        <div>
-            <h2>Panier</h2>
-            <?php
-                var_dump(session("panier"));
-            ?>
-        </div>
 
     </header>
 

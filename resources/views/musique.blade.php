@@ -46,9 +46,13 @@
         @if(Auth::user())
             <form method="post" action="/commander">
                 @csrf
+                <input type="hidden" name="mus_stock" value="{{$musique->mus_stock}}">
                 <input type="hidden" name="mus_id" value="{{$musique->mus_id}}"   />
-                <input type="submit" value="Commander">
+                <input type="submit" value="Ajouter au panier">
             </form>
+            @error('errorStock')
+                <div class="error">{{$message}}</div>
+            @enderror
         @endif
 
         @if(Auth::user())

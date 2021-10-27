@@ -206,3 +206,11 @@ Route::post('/supprFav', [FavoriController::class, "suppFav"]);
 Route::get('/topbar', function () {
     return view('topbar');
 });
+
+
+Route::post('/supprimerArticle', [PanierController::class, "supprimerArticle"]);
+Route::post('/modifQuantite', [PanierController::class, "modifQuantite"]);
+//Route::post('/validationPanier', [PanierController::class, "modifQuantite"]);
+Route::get('/validationPanier', function () {
+    return view('validationPanier');
+});

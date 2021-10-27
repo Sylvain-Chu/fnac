@@ -26,23 +26,24 @@
                     @if($errors->has('gender'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
-                    <label id="labelform">Nom :</label> <input type ="text" name="nom" value="{{ old('nom')}}"/>
+                    <label id="labelform">Nom :</label> <input type ="text" name="nom" value="{{ old('nom')}}" placeholder="Votre nom"/>
 
                     @if($errors->has('nom'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Prenom :</label> <input type="text" name="prenom" value="{{ old('prenom')}}"/>
+                    <label id="labelform">Prenom :</label> <input type="text" name="prenom" value="{{ old('prenom')}}" placeholder="Votre prénom"/>
                     @if($errors->has('prenom'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Mail :</label> <input type ="text" name="mail" value="{{ old('mail')}}"/>
+                    <label id="labelform">Mail :</label> <input type ="text" name="mail" value="{{ old('mail')}}" placeholder="hop@gmail.com"/>
                     @if($errors->has('mail'))
                         <p class="error">Veuillez vérifiez le champ ci dessus</p>
                     @endif
 
-                    <label id="labelform">Mot de passe:</label> <input type ="password" name="password" />
+                    <label id="labelform">Mot de passe:</label> 
+                    <input type ="password" name="password"/>
                     @if($errors->has('password'))
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
