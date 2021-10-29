@@ -29,7 +29,7 @@ class PanierController extends Controller
 
         foreach(session('panier') as $k => $v){
             if($v == $mus_id)
-                dd($k);
+                
                 Arr::forget($oldPanier, $k);
         }
 

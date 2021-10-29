@@ -1,12 +1,13 @@
 *{
     margin: 0px;
 }
-#menu{
+#menubar{
     background-color: rgba(244,176,39,255);
     box-shadow: 0px -3px 20px 20px rgb(244 176 39);
     display: flex;
     flex-wrap: wrap;
     transition: all 2s ease;
+    margin-bottom: 50px;
 }
 
 .sec1{
@@ -39,10 +40,19 @@
 
 .items{
     color: white;
-    font-family: sans-serif;
-    font-size: 15px;
     padding: 28px 10px 0px 10px;
     transition: all 0.3s ease;
+}
+
+.itemsbold{
+    font-style: oblique;
+}
+
+.items > a{
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 
@@ -50,15 +60,19 @@
     padding-top: 30px;
 }
 
-#title{
-    font-family: sans-serif;
-    font-size: 30px;
-    color: white;
+#titlebar{
     padding: 23px 0px 0px 25px;
     width: fit-content;
 }
 
-#form{
+#titlebar > a{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+#formbar{
     margin-left: auto;
     font-family: sans-serif;
     color: white;
@@ -68,8 +82,34 @@
     border-radius: 0px;
 }
 
-.border{
+.borderbar{
     border-style: solid;
     border-width: 0px;
     border-radius: 2px;
+}
+
+#buttonbar{
+    width: 30px;
+    height: 19px;
+}
+
+#researchbar{
+    width: 173px;
+    height: 19px;
+}
+
+@media screen and (max-width: 1370px)
+{
+    .sec3{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sec2{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sec1{
+        margin-left: auto;
+        margin-right: auto;
+    }  
 }

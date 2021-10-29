@@ -41,14 +41,11 @@ class RayonController extends Controller
                         'ray_id' => $ray->ray_id,
                         'mus_id' => $musique]
                 );
-            }
-            
-            
-             
+            }   
         }
 
 
 
-        return redirect($request->input('url'));
+        return back();
     }
 }

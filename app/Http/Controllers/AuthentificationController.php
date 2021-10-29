@@ -79,6 +79,7 @@ class AuthentificationController extends Controller
 
         $acheteur->ach_motpasse = Hash::make(request('password'));
         $acheteur->ach_civilite = request('gender');
+        $acheteur->ach_typeCompte = request('typeCompte');
         
         $acheteur->save();
         

@@ -48,6 +48,8 @@
                         <p class="error">Veuillez vérifier le champ ci dessus</p>
                     @endif
 
+                    <input type="hidden" name="typeCompte" value="membre">
+
                     <br>
 
                     <button class="valider" type="submit">Valider </button>

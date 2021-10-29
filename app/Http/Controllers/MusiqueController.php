@@ -17,6 +17,10 @@ class MusiqueController extends Controller
         return view("musiques-list", ["musiques" => Musique::all()->sortby('mus_titre')]);
     }
 
+    public function comp(){
+        return view("comparateurObjet", ["musiques" => Musique::all()->sortby('mus_titre')]);
+    }
+
     public function panier(){
         return view("panier", ["musiques" => Musique::all()->sortby('mus_titre')]);
     }

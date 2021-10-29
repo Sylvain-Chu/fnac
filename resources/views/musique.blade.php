@@ -62,6 +62,14 @@
                 <button>Ajouter au favoris</button>
             </form>
         @endif
+
+        @if(Auth::user())
+            <form action="{{ url('/ajouteFav') }}" method="GET">  
+                @csrf        
+                <input type="hidden" name="mus_id" value="{{$musique->mus_id}}">    
+                <button>Ajouter au comparateur</button>
+            </form>
+        @endif
             
     </div>
 
@@ -137,5 +145,7 @@
 @endforeach
 @endsection
 
+</body>
 
+</html>
 

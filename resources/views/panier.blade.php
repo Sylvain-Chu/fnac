@@ -89,7 +89,7 @@
                     <td> {{ $total }} €</td>
                 </tr>
             </table>
-            <form action="/validationPanier">
+            <form action="/livraison">
                 <button type="submit">Valider la commande</button>
             </form>
         </div>

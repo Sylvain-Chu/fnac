@@ -1,7 +1,7 @@
 /*---------- inscription ----------*/
 body {
     background-color:rgba(242,242,242,255);
-    text-align:center;
+
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -44,12 +44,11 @@ h1{
 
 
 input{
-    padding-bottom: 1.2vh;
-    border-top-style: hidden;
+    /*border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom: 1px solid black;
-    outline: none;
+    outline: none;*/
     width:15vw;
 }
 
@@ -166,3 +165,4 @@ input:hover{
     color: red;
     font-size: 12px;
 }
+

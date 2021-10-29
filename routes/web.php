@@ -14,12 +14,14 @@ use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CompteController;
 use App\Http\Controllers\EditeurController;
 use App\Http\Controllers\FavoriController;
+use App\Http\Controllers\LivraisonController;
 use App\Models\Favori;
 use App\Models\Genre;
 use App\Models\Musique;
 use App\Models\Rayon;
 use App\Models\Interprete;
 use App\Models\User;
+use App\Models\Relais;
 
 
 /*
@@ -52,13 +54,17 @@ Route::group([
         return view('modifMotpasse');
     });
 
+    
     /*Route::get('/modifCompteAccueil', function () {
         return view('modifCompteAccueil');
     });*/
     //---------------------------------------------------------------------
-
     
-
+    Route::post('/gererComptes/{ach_id}', [CompteController::class, "gererComptes"]);
+    Route::get('/gererComptes', function () {
+        return view('gererComptes');
+    });
+    
 });
 
 
@@ -68,7 +74,7 @@ Route::get('/header', function () {
     return view('header');
 });
 
-//----------------------------AUTHENTIFICATION--------------------
+//----------------------------AUTHENTIFICATION---------------------
 
 Route::post('/formConnexion', [AuthentificationController::class, "connexion"]);
 
@@ -87,7 +93,7 @@ Route::get('/connexion', function () {
 //---------------------------------------------------------------------
 
 
-//--------------TRI PAR RAYON-----------------------------------------
+//----------------------------TRI PAR RAYON---------------------
 
 Route::get('/rayon', [RayonController::class, "index"]);
 
@@ -107,7 +113,7 @@ Route::get('/rayon/{rayon}/{musiqueid}', function ($rayon, $musiqueid) {
 
 
 
-//-------------TRI PAR GENRE--------------------------------------------
+//----------------------------TRI PAR GENRE---------------------
 //Route::get('/genre', [GenreController::class, 'afficheGenre']);
 
 Route::get('/genre', [GenreController::class, "index"]);
@@ -137,7 +143,7 @@ Route::get('/recherche', function () {
 
 
 
-//-------------MUSIQUE-------------------------------------
+//----------------------------MUSIQUE---------------------
 Route::get('/musique/{idMusique}', function ($musiqueid) {
     return view('musique', [
         'laMusique'       => MusiqueController::affichageMusique($musiqueid),
@@ -157,7 +163,7 @@ Route::get('/rechercheMusiques', [MusiqueController::class, "cherche"]);
 
 
 
-//----------AVIS----------
+//----------------------------AVIS---------------------
 
 Route::post('/avis', [AvisController::class, "publieAvis"]);
 
@@ -169,7 +175,7 @@ Route::post('/signalement', [AvisController::class, "signalerAvis"]);
 
 Route::post('/suppresionAvisAbusif', [AvisAbusifController::class, "supprimerAvis"]);
 
-//-----------------------COMMANDES/PANIER---------------------
+//----------------------------COMMANDES/PANIER---------------------
 
 Route::post('/commander', [PanierController::class, "commander"]);
 
@@ -181,7 +187,7 @@ Route::get('/panier', function () {
 Route::get('/monPanier', [MusiqueController::class, "panier"]);
 
 
-//--------------MEMBRE COMMUNICATION--------
+//----------------------------MEMBRE COMMUNICATION---------------------
 
 Route::get('/avisAbusifs', [AvisAbusifController::class, "index"])->middleware('App\Http\Middleware\Auth');
 Route::get('/enregistrerPhoto', [MusiqueController::class, "musiquePhoto"])->middleware('App\Http\Middleware\Auth');
@@ -211,6 +217,35 @@ Route::get('/topbar', function () {
 Route::post('/supprimerArticle', [PanierController::class, "supprimerArticle"]);
 Route::post('/modifQuantite', [PanierController::class, "modifQuantite"]);
 //Route::post('/validationPanier', [PanierController::class, "modifQuantite"]);
-Route::get('/validationPanier', function () {
+Route::get('/livraison', function () {
     return view('validationPanier');
 });
+
+Route::get('/livraison/domicile', function () {
+    return view('livraison_dom');
+});
+
+Route::get('/livraison/{typelivraison}', [LivraisonController::class, "typelivraison"]);
+
+Route::post('/livraison/{typelivraison}/paiement', [LivraisonController::class, "paiement"]);
+
+
+Route::get('/livraison/magasin', function () {
+    return view('livraison_magasin');
+});
+
+Route::post('/ajouterPaiement', [LivraisonController::class, "ajouterPaiement"]);
+
+
+
+Route::post('/commandeEffectuee', [LivraisonController::class, "resumeCommande"]);
+
+
+//----------------------------COMPARATEUR D'OBJETS---------------------
+
+
+Route::get('/comparateurObjet', [MusiqueController::class, "comp"]);
+
+Route::post('/ajouteComp', [FavoriController::class, "ajouteFav"]); // url // controller // méthode
+Route::post('/supprComp', [FavoriController::class, "suppFav"]);
+

@@ -43,7 +43,6 @@ max-width: 20vw;
 }
 
 .container{
-    background-color:white;
     padding:2vw;
     border-top-style:none;
 }
@@ -105,11 +104,6 @@ input{
 #rayonlist{
     float:initial;
     max-width:20vw;
-}
-
-.col-size{
-
-
 }
 
 #touslesray{

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\User;
 
 class CompteController extends Controller
 {
@@ -41,6 +41,15 @@ class CompteController extends Controller
 
 
         return redirect('/dashboard');
+    }
+
+    public function gererComptes(Request $request,$ach_id)
+    {
+        $utilisateur = User::find($ach_id);
+        $utilisateur->ach_typeCompte = request('typeCompte');
+        $utilisateur->save();
+
+        return redirect('/gererComptes');
     }
 
 }

@@ -28,7 +28,7 @@
         @if ($datehier == $dateAchat)
 
 
-            <h2>Achteur : </h2>
+            <h2>Acheteur : </h2>
             <p>Commande de {{ $commande->acheteur->ach_civilite }} {{ $commande->acheteur->ach_nom }}
                 {{ $commande->acheteur->ach_prenom }} le {{ $dateCommande }}: </p>
 
@@ -36,7 +36,7 @@
             <h3>Musiques :</h3>
             <ul>
                 @foreach ($commande->ligneachat as $c)
-                    <li>{{ $c->mus_titre }} <br> Nombre d'article : {{ $c->pivot->lea_quantite }}</li><br>
+                    <li>{{ $c->mus_titre }} <br> Nombre d'articles : {{ $c->pivot->lea_quantite }}</li><br>
 
                 @endforeach
             </ul>
@@ -69,7 +69,7 @@
     @endforeach
 
     @if ($temp>0)
-        <p>Aucune commande n'a été effectuer hier</p>
+        <p>Aucune commande n'a été effectuée hier</p>
     @endif
 @endsection
 
