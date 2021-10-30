@@ -15,18 +15,21 @@
 
 @section('content')
     @php
+    session()->forget('test');
     $lePanier = [];
     if (!empty(session('panier'))){
         foreach (session('panier') as $article) {
-        if (array_key_exists($article, $lePanier)) {
-            $lePanier[$article]++;
-        } else {
-            $lePanier[$article] = 1;
+            if (array_key_exists($article, $lePanier)) {
+                $lePanier[$article]++;
+            } else {
+                $lePanier[$article] = 1;
+            }
         }
-    }
-    }
-    
+        session()->push('test', $lePanier);
 
+    }
+
+    var_dump(session('test'));
     $total = 0;
     @endphp
 

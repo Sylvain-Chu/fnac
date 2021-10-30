@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Achat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CommandeController extends Controller
 {
@@ -17,6 +18,12 @@ class CommandeController extends Controller
 
         $idAcheteur = Auth::user()->ach_id;
 
-        return view("mesCommandes", ["mesCommandes" => Achat::where('ach_id', $idAcheteur)->orderBy('aca_id', 'desc')->get()]);
+
+        //$commandes = Achat::where('ach_id', $idAcheteur)->get();
+        $commandes = Achat::all();
+
+
+        return view("mesCommandes", ["mesCommandes" => $commandes]);
+
     }
 }

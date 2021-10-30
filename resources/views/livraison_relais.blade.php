@@ -14,6 +14,7 @@
 
 
 @section('content')
+<h2>Veuillez choisir un point relais</h2>
 <form action="{{ url("/livraison/relais/paiement") }}" method="POST">
     @csrf
     @foreach ($relais as $relai)

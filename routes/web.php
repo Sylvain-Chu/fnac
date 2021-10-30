@@ -221,9 +221,6 @@ Route::get('/livraison', function () {
     return view('validationPanier');
 });
 
-Route::get('/livraison/domicile', function () {
-    return view('livraison_dom');
-});
 
 Route::get('/livraison/{typelivraison}', [LivraisonController::class, "typelivraison"]);
 

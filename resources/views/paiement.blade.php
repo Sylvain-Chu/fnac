@@ -26,7 +26,19 @@
             @foreach ($carteBleues as $cb)
                 {{$cb->cab_id}}
                 <input type="hidden" name="ach_id" value="{{Auth::user()->ach_id}}">
-                <input type="hidden" name="relai" value="{{$relai}}">
+
+                @if ($type == 'relais')
+                    <input type="hidden" name="relai" value="{{$relai}}">
+                    <input type="hidden" name="type" value="relais">
+                @elseif($type == 'dom')
+                    <input type="hidden" name="dom" value="{{$dom}}">
+                    <input type="hidden" name="type" value="dom">
+                @elseif($type == 'mag')
+                    <input type="hidden" name="type" value="mag">
+                    <input type="hidden" name="mag" value="{{$mag}}">
+                @endif
+
+
                 <input type="radio" id="{{$cb->cab_id}}" name="cab_id" value="{{$cb->cab_id}}">
                 <label for="{{$cb->cab_id}}">{{$cb->cab_titulaire}}</label><br>
 

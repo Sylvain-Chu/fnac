@@ -17,8 +17,9 @@
 
     <h1>Commandes : </h1>
 
-
+   
     @foreach ($commandes as $commande)
+    {{dd($commande->ligneachat)}}
         @php
             $temp = 0;
             $datehier = date('Y-m-d', strtotime('-1 days'));
