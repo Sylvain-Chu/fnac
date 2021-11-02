@@ -15,16 +15,13 @@
 
 @section('content')
 
-@php
-    var_dump(session('panier'));
-@endphp
+
 
     @if (count($carteBleues) >=  1)
-        
+        <h2>Voici vos cartes enregistré ! </h2>
         <form action="{{ url("/commandeEffectuee") }}" method="post">
             @csrf
             @foreach ($carteBleues as $cb)
-                {{$cb->cab_id}}
                 <input type="hidden" name="ach_id" value="{{Auth::user()->ach_id}}">
 
                 @if ($type == 'relais')

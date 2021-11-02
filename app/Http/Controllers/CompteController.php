@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Adresse;
 
 class CompteController extends Controller
 {
-    
+
+
     public function modifMotpasse(Request $request)
     {
         //vérifier ici si l'utilisateur est connecté
@@ -35,7 +38,7 @@ class CompteController extends Controller
         $utilisateur->ach_pseudo = request('pseudo');
         $utilisateur->ach_telfixe = request('telfixe');
         $utilisateur->ach_telportable = request('telportable');
-        
+
         $utilisateur->save();
 
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdresseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RechercheController;
 use App\Http\Controllers\MusiqueController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\CompteController;
 use App\Http\Controllers\EditeurController;
 use App\Http\Controllers\FavoriController;
 use App\Http\Controllers\LivraisonController;
+use App\Models\Adresse;
 use App\Models\Favori;
 use App\Models\Genre;
 use App\Models\Musique;
@@ -44,10 +46,19 @@ Route::group([
     });
 
     //-----------------------modif compte ----------------------------
-    Route::post('/mesCoordonnees', [CompteController::class, "modifCoordonnees"]);
-    Route::get('/mesCoordonnees', function () {
-        return view('mesCoordonnees');
+    Route::post('/mesInfos', [CompteController::class, "modifCoordonnees"]);
+    //Route::get('/mesInfos', [AdresseController::class, "index"]);
+
+    Route::get('/mesInfos', function () {
+        return view('mesInfos');
     });
+
+    Route::get('/mesCoordonnees', [AdresseController::class, "index"]);
+    Route::post('/editCoordonnees', [AdresseController::class, "editCoordonnees"]);
+    Route::post('/addCoordonnees', [AdresseController::class, "addCoordonnees"]);
+
+    
+
 
     Route::post('/modifMotpasse', [CompteController::class, "modifMotpasse"]);
     Route::get('/modifMotpasse', function () {

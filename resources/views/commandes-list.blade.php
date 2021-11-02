@@ -19,14 +19,16 @@
 
    
     @foreach ($commandes as $commande)
-    {{dd($commande->ligneachat)}}
         @php
             $temp = 0;
             $datehier = date('Y-m-d', strtotime('-1 days'));
+            $dateAujou = date('Y-m-d');
+
             $dateAchat = $commande->aca_date;
             $dateCommande = strftime('%d %b %Y');
         @endphp
-        @if ($datehier == $dateAchat)
+
+        @if ($datehier == $dateAchat || $dateAchat == $dateAujou)
 
 
             <h2>Acheteur : </h2>

@@ -19,8 +19,9 @@ class CommandeController extends Controller
         $idAcheteur = Auth::user()->ach_id;
 
 
-        //$commandes = Achat::where('ach_id', $idAcheteur)->get();
-        $commandes = Achat::all();
+        $commandes = Achat::where('ach_id', $idAcheteur)->get();
+        //$commandes = Achat::all();
+
 
 
         return view("mesCommandes", ["mesCommandes" => $commandes]);

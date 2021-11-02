@@ -20,7 +20,7 @@ class Relais extends Model
         );
     }
 
-    public function achat(){
+    public function acheteur(){
         return $this->belongsToMany(
             Achat::class,
             "t_j_relaisacheteur_rea",

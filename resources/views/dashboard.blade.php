@@ -17,7 +17,8 @@
         {{ Auth::user()->ach_prenom }} 
 
         <p><a href="{{url("/modifMotpasse")}}">Modifier mot de passe</a></p>
-        <p><a href="{{url("/mesCoordonnees")}}">Modifier mes coordoonées</a></p>
+        <p><a href="{{url("/mesInfos")}}">Modifier mes informations</a></p>
+        <p><a href="{{url("/mesCoordonnees")}}">Modifier mes coordonnées</a></p>
 
 @endsection
 

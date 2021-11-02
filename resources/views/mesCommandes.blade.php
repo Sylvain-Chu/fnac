@@ -26,8 +26,8 @@
 
     
         @foreach ($mesCommandes as $commande)
-            {{var_dump($commande->ligneachat)}}
-            @if ($commande->acheteur->ach_id == Auth::user()->ach_id)
+
+            
                 @php           
                     $date = strftime("%d %B %G", strtotime($commande->aca_date));                
                 @endphp
@@ -36,12 +36,6 @@
                 <input type="hidden" name="dateCommande" value="{{ $date }}">
                 <ul>   
                     
-                    
-                    @php                        
-                        $commande->ligneachat->each(function ($item) {
-                            var_dump($item);
-                        });
-                    @endphp
 
                     @foreach ($commande->ligneachat as $c)
 
@@ -62,7 +56,6 @@
                     @php
                         $total = 0;
                     @endphp
-                @endif
         @endforeach
     @else
         <p>Aucune commande n'a encore été effectuer</p>
